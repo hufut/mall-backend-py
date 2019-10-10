@@ -1,7 +1,17 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User, Group
+from django.http import HttpResponse
 from rest_framework import viewsets
 from account.serializers import UserSerializer, GroupSerializer
+
+def health_check(request):
+    """
+    ok kkkkk
+    :param request:
+    :return:
+    """
+    # health check response for tengine
+    return HttpResponse('love you')
 
 
 class UserViewSet(viewsets.ModelViewSet):
